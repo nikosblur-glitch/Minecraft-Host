@@ -3,295 +3,503 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free Minecraft SMP | Play for Free</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Free Minecraft SMP Hosting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0f1a0f;
-      --card: #1a2a1a;
-      --green: #55c057;
-      --green-dark: #3a8f3d;
-      --text: #e8f5e9;
-      --muted: #a5d6a7;
+      --bg: #0c140c;
+      --card: #152215;
+      --green: #4ade80;
+      --green-dark: #22c55e;
+      --red: #ef4444;
+      --text: #ecfdf5;
+      --muted: #86efac;
+      --border: #1f3a1f;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
       min-height: 100vh;
+      line-height: 1.5;
     }
 
-    /* Pixel font for titles */
-    .pixel {
-      font-family: 'Press Start 2P', cursive;
-      letter-spacing: 1px;
+    .pixel { font-family: 'Press Start 2P', cursive; }
+
+    /* ========== HOME ========== */
+    #home {
+      display: block;
     }
 
     header {
-      background: linear-gradient(180deg, #0a150a 0%, transparent 100%);
-      padding: 1.5rem 2rem;
+      padding: 1.2rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
     }
 
     .logo {
-      font-size: 1.1rem;
       color: var(--green);
+      font-size: 1rem;
     }
 
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      margin-left: 1.8rem;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-    nav a:hover { color: var(--green); }
-
-    /* Hero */
     .hero {
       text-align: center;
-      padding: 6rem 1.5rem 4rem;
-      background: radial-gradient(ellipse at top, #1b3a1b 0%, transparent 60%);
+      padding: 5rem 1.5rem 4rem;
+      background: radial-gradient(ellipse at top, #163016 0%, transparent 65%);
     }
 
     .hero h1 {
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      margin-bottom: 1.2rem;
-      color: #fff;
-      text-shadow: 0 0 20px rgba(85, 192, 87, 0.4);
+      font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+      margin-bottom: 1rem;
+      text-shadow: 0 0 25px rgba(74, 222, 128, 0.35);
     }
 
     .hero p {
-      font-size: 1.25rem;
       color: var(--muted);
-      max-width: 600px;
-      margin: 0 auto 2.5rem;
+      font-size: 1.15rem;
+      max-width: 520px;
+      margin: 0 auto 2.2rem;
     }
 
     .btn {
       display: inline-block;
       background: var(--green);
-      color: #0a1a0a;
+      color: #052e16;
       font-weight: 700;
-      font-size: 1.1rem;
-      padding: 0.9rem 2.2rem;
+      font-size: 1.05rem;
+      padding: 0.85rem 2rem;
       border-radius: 8px;
+      border: none;
+      cursor: pointer;
       text-decoration: none;
       transition: all 0.2s;
-      box-shadow: 0 4px 20px rgba(85, 192, 87, 0.35);
+      box-shadow: 0 4px 18px rgba(74, 222, 128, 0.3);
     }
     .btn:hover {
-      background: #6ad36d;
+      background: #6ee7a0;
       transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(85, 192, 87, 0.45);
     }
 
     .btn-outline {
       background: transparent;
       border: 2px solid var(--green);
       color: var(--green);
-      margin-left: 1rem;
+      margin-left: 0.8rem;
       box-shadow: none;
     }
     .btn-outline:hover {
-      background: rgba(85, 192, 87, 0.15);
+      background: rgba(74, 222, 128, 0.12);
     }
 
-    /* Features */
     .features {
-      max-width: 1100px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 4rem 1.5rem;
+      padding: 2rem 1.5rem 5rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.8rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.4rem;
     }
 
     .card {
       background: var(--card);
-      border: 1px solid #2a3f2a;
+      border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 2rem;
+      padding: 1.6rem;
       text-align: center;
-      transition: transform 0.2s, border-color 0.2s;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: var(--green);
+    .card .icon { font-size: 2rem; margin-bottom: 0.7rem; }
+    .card h3 { color: var(--green); margin-bottom: 0.4rem; font-size: 1.05rem; }
+    .card p { color: var(--muted); font-size: 0.92rem; }
+
+    /* ========== PANEL ========== */
+    #panel {
+      display: none;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.2rem 4rem;
     }
 
-    .card .icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.8rem;
     }
 
-    .card h3 {
-      margin-bottom: 0.6rem;
+    .panel-header h2 {
+      font-size: 1.3rem;
       color: var(--green);
     }
 
-    /* How to join */
-    .join {
-      background: #132213;
-      padding: 5rem 1.5rem;
-      text-align: center;
+    .back-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
     }
+    .back-btn:hover { border-color: var(--green); color: var(--green); }
 
-    .join h2 {
-      margin-bottom: 2rem;
-      font-size: 1.8rem;
-    }
-
-    .steps {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      max-width: 900px;
-      margin: 0 auto 3rem;
-    }
-
-    .step {
+    .panel-card {
       background: var(--card);
-      padding: 1.5rem 2rem;
-      border-radius: 10px;
-      width: 220px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.8rem;
+      margin-bottom: 1.4rem;
     }
 
-    .step-number {
-      background: var(--green);
-      color: #0a1a0a;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
+    .panel-card h3 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: var(--green);
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      margin: 0 auto 1rem;
+      gap: 0.5rem;
     }
 
-    .ip-box {
+    label {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    select, input[type="range"] {
+      width: 100%;
+      background: #0c1a0c;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.65rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      margin-bottom: 1.1rem;
+    }
+
+    select:focus { outline: none; border-color: var(--green); }
+
+    .players-value {
+      text-align: right;
+      font-weight: 600;
+      color: var(--green);
+      margin-top: -0.8rem;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .plugins-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.6rem;
+    }
+
+    .plugin {
+      background: #0c1a0c;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.55rem 0.7rem;
+      font-size: 0.82rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .plugin span { color: var(--green); }
+
+    .status-box {
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1.4rem;
+      border: 1px solid var(--border);
+    }
+
+    .status-offline { background: #1a0f0f; border-color: #3f1a1a; }
+    .status-starting { background: #1a1a0f; border-color: #3f3a1a; }
+    .status-online { background: #0f1a12; border-color: #1a3f25; }
+
+    .status-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .ip-display {
+      margin-top: 1rem;
       background: #0a150a;
       border: 2px dashed var(--green);
-      display: inline-block;
-      padding: 1rem 2rem;
+      padding: 0.9rem 1.4rem;
       border-radius: 8px;
       font-family: monospace;
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       color: var(--green);
       cursor: pointer;
       user-select: all;
+      display: none;
     }
 
-    /* Footer */
-    footer {
+    .controls {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-start {
+      background: var(--green);
+      color: #052e16;
+      min-width: 140px;
+    }
+    .btn-stop {
+      background: var(--red);
+      color: white;
+      min-width: 140px;
+      display: none;
+    }
+
+    .note {
       text-align: center;
-      padding: 3rem 1.5rem;
       color: var(--muted);
-      font-size: 0.95rem;
-      border-top: 1px solid #1f2f1f;
+      font-size: 0.85rem;
+      margin-top: 1.5rem;
+      opacity: 0.8;
     }
 
-    footer a {
-      color: var(--green);
-      text-decoration: none;
-    }
-
-    @media (max-width: 600px) {
-      .btn-outline { margin-left: 0; margin-top: 1rem; display: block; }
-      nav { display: none; }
+    @media (max-width: 500px) {
+      .btn-outline { margin-left: 0; margin-top: 0.7rem; display: inline-block; }
+      .controls { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo pixel">FREE SMP</div>
-    <nav>
-      <a href="#features">Features</a>
-      <a href="#join">Join</a>
-      <a href="https://discord.gg/yourinvite" target="_blank">Discord</a>
-    </nav>
-  </header>
+  <!-- ========== HOME PAGE ========== -->
+  <div id="home">
+    <header>
+      <div class="logo pixel">FREE SMP</div>
+    </header>
 
-  <section class="hero">
-    <h1 class="pixel">Free Minecraft SMP</h1>
-    <p>Παίζεις δωρεάν για πάντα. Καθόλου lag, φιλική κοινότητα και whitelist σε 1 λεπτό.</p>
-    <div>
-      <a href="#join" class="btn">Join Now →</a>
-      <a href="https://discord.gg/yourinvite" class="btn btn-outline" target="_blank">Discord</a>
-    </div>
-  </section>
+    <section class="hero">
+      <h1 class="pixel">Free Minecraft<br>SMP Hosting</h1>
+      <p>Φτιάξε τον δικό σου server σε δευτερόλεπτα. Java & Bedrock, plugins έτοιμα, 100% δωρεάν.</p>
+      <button class="btn" onclick="openPanel()">Join Now →</button>
+      <a href="#" class="btn btn-outline">Discord</a>
+    </section>
 
-  <section class="features" id="features">
-    <div class="card">
-      <div class="icon">🆓</div>
-      <h3>100% Free</h3>
-      <p>Καμία χρέωση. Ποτέ. Ούτε premium ranks που χαλούν το παιχνίδι.</p>
-    </div>
-    <div class="card">
-      <div class="icon">⚡</div>
-      <h3>Low Latency</h3>
-      <p>Server στην Ευρώπη με καλό hardware. Καθαρό 20 TPS.</p>
-    </div>
-    <div class="card">
-      <div class="icon">🛡️</div>
-      <h3>Protected</h3>
-      <p>Anti-cheat, backups καθημερινά και ενεργό staff.</p>
-    </div>
-    <div class="card">
-      <div class="icon">🤝</div>
-      <h3>Friendly Community</h3>
-      <p>Whitelist για να κρατάμε το server καθαρό από toxic players.</p>
-    </div>
-  </section>
-
-  <section class="join" id="join">
-    <h2 class="pixel">Πώς μπαίνεις</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <p>Μπες στο Discord μας</p>
+    <div class="features">
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Instant Start</h3>
+        <p>Ο server ξεκινά σε λίγα δευτερόλεπτα</p>
       </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <p>Κάνε αίτηση whitelist (1 λεπτό)</p>
+      <div class="card">
+        <div class="icon">🔌</div>
+        <h3>Popular Plugins</h3>
+        <p>Paper, RTP, Essentials, LuckPerms & άλλα</p>
       </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <p>Μπες με το IP παρακάτω</p>
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>Java + Bedrock</h3>
+        <p>Υποστήριξη και για τις δύο εκδόσεις</p>
+      </div>
+      <div class="card">
+        <div class="icon">🆓</div>
+        <h3>Always Free</h3>
+        <p>Καμία χρέωση, ποτέ</p>
       </div>
     </div>
+  </div>
 
-    <p style="margin-bottom: 1rem; color: var(--muted);">Server IP (κλικ για copy):</p>
-    <div class="ip-box" onclick="navigator.clipboard.writeText('play.yourserver.com'); this.innerText='Copied!'; setTimeout(()=>this.innerText='play.yourserver.com',1500)">
-      play.yourserver.com
+  <!-- ========== SERVER PANEL ========== -->
+  <div id="panel">
+    <div class="panel-header">
+      <h2 class="pixel">Δημιουργία Server</h2>
+      <button class="back-btn" onclick="closePanel()">← Πίσω</button>
     </div>
-  </section>
 
-  <footer>
-    <p>© 2026 Free Minecraft SMP • Made with ❤️</p>
-    <p style="margin-top: 0.5rem;">
-      <a href="https://discord.gg/yourinvite" target="_blank">Discord</a> · 
-      <a href="#">Rules</a>
-    </p>
-  </footer>
+    <!-- Status -->
+    <div id="statusBox" class="status-box status-offline">
+      <div class="status-text" id="statusText">⚫ Offline</div>
+      <div id="statusSub" style="color:var(--muted);font-size:0.9rem;">Ο server είναι κλειστός</div>
+      <div class="ip-display" id="ipBox" onclick="copyIP()">play.freesmp.demo</div>
+    </div>
 
+    <!-- Settings -->
+    <div class="panel-card" id="settingsCard">
+      <h3>⚙️ Ρυθμίσεις Server</h3>
+
+      <label>Τύπος Server</label>
+      <select id="serverType">
+        <option value="java">Java Edition</option>
+        <option value="bedrock">Bedrock Edition</option>
+        <option value="both">Java + Bedrock (Geyser)</option>
+      </select>
+
+      <label>Έκδοση Minecraft</label>
+      <select id="version">
+        <option value="26.2">26.2 (Latest - Chaos Cubed)</option>
+        <option value="26.1.2">26.1.2</option>
+        <option value="26.1.1">26.1.1</option>
+        <option value="26.1">26.1 (Tiny Takeover)</option>
+        <option value="1.21.11">1.21.11 (Mounts of Mayhem)</option>
+        <option value="1.21.10">1.21.10 (The Copper Age)</option>
+        <option value="1.21.9">1.21.9</option>
+        <option value="1.21.8">1.21.8 (Chase the Skies)</option>
+        <option value="1.21.7">1.21.7</option>
+        <option value="1.21.6">1.21.6</option>
+        <option value="1.21.5">1.21.5 (Spring to Life)</option>
+        <option value="1.21.4">1.21.4</option>
+        <option value="1.21.1">1.21.1</option>
+      </select>
+
+      <label>Μέγιστος αριθμός παικτών</label>
+      <input type="range" id="maxPlayers" min="1" max="200" value="20" oninput="updatePlayers(this.value)">
+      <div class="players-value"><span id="playersVal">20</span> παίκτες</div>
+    </div>
+
+    <!-- Plugins -->
+    <div class="panel-card">
+      <h3>🔌 Προεγκατεστημένα Plugins</h3>
+      <div class="plugins-grid">
+        <div class="plugin"><span>●</span> Paper</div>
+        <div class="plugin"><span>●</span> RTP</div>
+        <div class="plugin"><span>●</span> EssentialsX</div>
+        <div class="plugin"><span>●</span> LuckPerms</div>
+        <div class="plugin"><span>●</span> WorldEdit</div>
+        <div class="plugin"><span>●</span> FastAsyncWorldEdit</div>
+        <div class="plugin"><span>●</span> CoreProtect</div>
+        <div class="plugin"><span>●</span> PlaceholderAPI</div>
+        <div class="plugin"><span>●</span> ProtocolLib</div>
+        <div class="plugin"><span>●</span> Multiverse-Core</div>
+        <div class="plugin"><span>●</span> Chunky</div>
+        <div class="plugin"><span>●</span> Spark</div>
+        <div class="plugin"><span>●</span> Dynmap</div>
+        <div class="plugin"><span>●</span> GriefPrevention</div>
+        <div class="plugin"><span>●</span> Citizens</div>
+        <div class="plugin"><span>●</span> Geyser (Bedrock)</div>
+        <div class="plugin"><span>●</span> ViaVersion</div>
+        <div class="plugin"><span>●</span> ViaBackwards</div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button class="btn btn-start" id="startBtn" onclick="startServer()">▶ Start Server</button>
+      <button class="btn btn-stop" id="stopBtn" onclick="stopServer()">⏹ Stop Server</button>
+    </div>
+
+    <p class="note">Αυτό είναι demo panel. Δεν τρέχει πραγματικό Minecraft server.</p>
+  </div>
+
+  <script>
+    // ========== View switching ==========
+    function openPanel() {
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('panel').style.display = 'block';
+      window.scrollTo(0, 0);
+    }
+
+    function closePanel() {
+      document.getElementById('panel').style.display = 'none';
+      document.getElementById('home').style.display = 'block';
+      window.scrollTo(0, 0);
+    }
+
+    // ========== Players slider ==========
+    function updatePlayers(val) {
+      document.getElementById('playersVal').textContent = val;
+    }
+
+    // ========== Server simulation ==========
+    let isOnline = false;
+    let isStarting = false;
+
+    function startServer() {
+      if (isOnline || isStarting) return;
+
+      isStarting = true;
+      const statusBox = document.getElementById('statusBox');
+      const statusText = document.getElementById('statusText');
+      const statusSub = document.getElementById('statusSub');
+      const ipBox = document.getElementById('ipBox');
+      const startBtn = document.getElementById('startBtn');
+      const stopBtn = document.getElementById('stopBtn');
+      const settingsCard = document.getElementById('settingsCard');
+
+      // Disable settings while starting
+      settingsCard.style.opacity = '0.5';
+      settingsCard.style.pointerEvents = 'none';
+      startBtn.style.display = 'none';
+
+      statusBox.className = 'status-box status-starting';
+      statusText.textContent = '🟡 Starting...';
+      statusSub.textContent = 'Φόρτωση Paper + plugins...';
+
+      // Fake loading steps
+      setTimeout(() => {
+        statusSub.textContent = 'Εφαρμογή ρυθμίσεων...';
+      }, 1200);
+
+      setTimeout(() => {
+        statusSub.textContent = 'Εκκίνηση κόσμου...';
+      }, 2400);
+
+      setTimeout(() => {
+        isStarting = false;
+        isOnline = true;
+
+        statusBox.className = 'status-box status-online';
+        statusText.textContent = '🟢 Online';
+        statusSub.textContent = 'Ο server είναι έτοιμος! Μπες τώρα.';
+
+        // Generate fake IP
+        const fakeIP = `play-${Math.floor(Math.random()*9000+1000)}.freesmp.demo`;
+        ipBox.textContent = fakeIP;
+        ipBox.style.display = 'inline-block';
+
+        stopBtn.style.display = 'inline-block';
+      }, 3800);
+    }
+
+    function stopServer() {
+      isOnline = false;
+      isStarting = false;
+
+      const statusBox = document.getElementById('statusBox');
+      const statusText = document.getElementById('statusText');
+      const statusSub = document.getElementById('statusSub');
+      const ipBox = document.getElementById('ipBox');
+      const startBtn = document.getElementById('startBtn');
+      const stopBtn = document.getElementById('stopBtn');
+      const settingsCard = document.getElementById('settingsCard');
+
+      statusBox.className = 'status-box status-offline';
+      statusText.textContent = '⚫ Offline';
+      statusSub.textContent = 'Ο server είναι κλειστός';
+      ipBox.style.display = 'none';
+
+      startBtn.style.display = 'inline-block';
+      stopBtn.style.display = 'none';
+
+      settingsCard.style.opacity = '1';
+      settingsCard.style.pointerEvents = 'auto';
+    }
+
+    function copyIP() {
+      const ip = document.getElementById('ipBox').textContent;
+      navigator.clipboard.writeText(ip).then(() => {
+        const original = ip;
+        document.getElementById('ipBox').textContent = '✓ Copied!';
+        setTimeout(() => {
+          document.getElementById('ipBox').textContent = original;
+        }, 1500);
+      });
+    }
+  </script>
 </body>
 </html>
