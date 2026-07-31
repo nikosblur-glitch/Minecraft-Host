@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Minecraft SMP | Play for Free</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1a0f;
+      --card: #1a2a1a;
+      --green: #55c057;
+      --green-dark: #3a8f3d;
+      --text: #e8f5e9;
+      --muted: #a5d6a7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Pixel font for titles */
+    .pixel {
+      font-family: 'Press Start 2P', cursive;
+      letter-spacing: 1px;
+    }
+
+    header {
+      background: linear-gradient(180deg, #0a150a 0%, transparent 100%);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      color: var(--green);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 1.8rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--green); }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 6rem 1.5rem 4rem;
+      background: radial-gradient(ellipse at top, #1b3a1b 0%, transparent 60%);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      margin-bottom: 1.2rem;
+      color: #fff;
+      text-shadow: 0 0 20px rgba(85, 192, 87, 0.4);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--green);
+      color: #0a1a0a;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0.9rem 2.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(85, 192, 87, 0.35);
+    }
+    .btn:hover {
+      background: #6ad36d;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(85, 192, 87, 0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--green);
+      color: var(--green);
+      margin-left: 1rem;
+      box-shadow: none;
+    }
+    .btn-outline:hover {
+      background: rgba(85, 192, 87, 0.15);
+    }
+
+    /* Features */
+    .features {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid #2a3f2a;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--green);
+    }
+
+    .card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      margin-bottom: 0.6rem;
+      color: var(--green);
+    }
+
+    /* How to join */
+    .join {
+      background: #132213;
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+
+    .join h2 {
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+    }
+
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto 3rem;
+    }
+
+    .step {
+      background: var(--card);
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+      width: 220px;
+    }
+
+    .step-number {
+      background: var(--green);
+      color: #0a1a0a;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin: 0 auto 1rem;
+    }
+
+    .ip-box {
+      background: #0a150a;
+      border: 2px dashed var(--green);
+      display: inline-block;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 1.3rem;
+      color: var(--green);
+      cursor: pointer;
+      user-select: all;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-top: 1px solid #1f2f1f;
+    }
+
+    footer a {
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .btn-outline { margin-left: 0; margin-top: 1rem; display: block; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo pixel">FREE SMP</div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#join">Join</a>
+      <a href="https://discord.gg/yourinvite" target="_blank">Discord</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1 class="pixel">Free Minecraft SMP</h1>
+    <p>Παίζεις δωρεάν για πάντα. Καθόλου lag, φιλική κοινότητα και whitelist σε 1 λεπτό.</p>
+    <div>
+      <a href="#join" class="btn">Join Now →</a>
+      <a href="https://discord.gg/yourinvite" class="btn btn-outline" target="_blank">Discord</a>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="card">
+      <div class="icon">🆓</div>
+      <h3>100% Free</h3>
+      <p>Καμία χρέωση. Ποτέ. Ούτε premium ranks που χαλούν το παιχνίδι.</p>
+    </div>
+    <div class="card">
+      <div class="icon">⚡</div>
+      <h3>Low Latency</h3>
+      <p>Server στην Ευρώπη με καλό hardware. Καθαρό 20 TPS.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🛡️</div>
+      <h3>Protected</h3>
+      <p>Anti-cheat, backups καθημερινά και ενεργό staff.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🤝</div>
+      <h3>Friendly Community</h3>
+      <p>Whitelist για να κρατάμε το server καθαρό από toxic players.</p>
+    </div>
+  </section>
+
+  <section class="join" id="join">
+    <h2 class="pixel">Πώς μπαίνεις</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <p>Μπες στο Discord μας</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <p>Κάνε αίτηση whitelist (1 λεπτό)</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <p>Μπες με το IP παρακάτω</p>
+      </div>
+    </div>
+
+    <p style="margin-bottom: 1rem; color: var(--muted);">Server IP (κλικ για copy):</p>
+    <div class="ip-box" onclick="navigator.clipboard.writeText('play.yourserver.com'); this.innerText='Copied!'; setTimeout(()=>this.innerText='play.yourserver.com',1500)">
+      play.yourserver.com
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Free Minecraft SMP • Made with ❤️</p>
+    <p style="margin-top: 0.5rem;">
+      <a href="https://discord.gg/yourinvite" target="_blank">Discord</a> · 
+      <a href="#">Rules</a>
+    </p>
+  </footer>
+
+</body>
+</html>
